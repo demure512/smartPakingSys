@@ -5,6 +5,7 @@ import com.smartparking.api.model.ParkingRecord;
 import com.smartparking.api.payload.ApiResponse;
 import com.smartparking.api.service.ParkingService;
 import com.smartparking.api.service.VehicleService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

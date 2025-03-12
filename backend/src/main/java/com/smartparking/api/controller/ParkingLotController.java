@@ -74,7 +74,7 @@ public class ParkingLotController {
     public ResponseEntity<ParkingSpace> addParkingSpace(
             @PathVariable Integer id,
             @Valid @RequestBody ParkingSpace parkingSpace) {
-        parkingSpace.setParkingLot(new ParkingLot(id));
+        parkingSpace.setParkingLot(new ParkingLot());
         ParkingSpace newSpace = parkingService.createParkingSpace(parkingSpace);
         return ResponseEntity.ok(newSpace);
     }

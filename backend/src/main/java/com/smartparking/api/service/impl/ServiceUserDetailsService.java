@@ -13,12 +13,12 @@ import java.util.Collections;
 import java.util.Optional;
 
 @Service
-public class CustomUserDetailsService implements UserDetailsService {
+public class ServiceUserDetailsService implements UserDetailsService {
 
-    private final UserRepository userRepository;
+    private UserRepository userRepository;
 
     @Autowired
-    public CustomUserDetailsService(UserRepository userRepository) {
+    public void CustomUserDetailsService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

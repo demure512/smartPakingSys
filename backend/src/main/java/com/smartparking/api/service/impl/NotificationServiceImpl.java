@@ -132,7 +132,7 @@ public class NotificationServiceImpl implements NotificationService {
             throw new IllegalArgumentException("Notification must have a target user");
         }
         
-        Long userId = notification.getUser().getId();
+        Long userId = Long.valueOf(notification.getUser().getId());
         boolean isSubscribed = preferenceRepository.isUserSubscribedToType(userId, notification.getType());
         
         if (isSubscribed) {
@@ -154,7 +154,7 @@ public class NotificationServiceImpl implements NotificationService {
         }
         
         users.forEach(user -> {
-            boolean isSubscribed = preferenceRepository.isUserSubscribedToType(user.getId(), notification.getType());
+            boolean isSubscribed = preferenceRepository.isUserSubscribedToType(Long.valueOf(user.getId()), notification.getType());
             if (isSubscribed) {
                 Notification userNotification = new Notification();
                 userNotification.setUser(user);
